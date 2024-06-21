@@ -58,7 +58,29 @@
       }
     }
 
-    setInterval(cambiarColor, 2000); // Cambia cada 2 segundos
+    // Cambia el color del semáforo cada 2 segundos
+    const intervaloSemaforo = setInterval(cambiarColor, 2000);
+
+    // Detener el semáforo después de 10 segundos
+    setTimeout(() => {
+      clearInterval(intervaloSemaforo);
+      console.log('El semáforo ha sido detenido.');
+    }, 10000);
+
+    // Ejemplo adicional
+    function imprimeHola() {
+      console.log('Hola');
+    }
+
+    function detente(intervalo) {
+      clearInterval(intervalo);
+      console.log('Listo!');
+    }
+
+    const intervaloHola = setInterval(imprimeHola, 1000);
+
+    setTimeout(() => detente(intervaloHola), 5000);
   </script>
 </body>
 </html>
+
